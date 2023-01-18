@@ -41,4 +41,6 @@ spain_total_population = 47163418 # 2022
 switzerland_total_population = 8508698 # 2022
 
 print(spain_total_population > 10000000 or switzerland_total_population > 10000000)
-print (spain_total_population > 10000000 | switzerland_total_population > 10000000)
+#print (spain_total_population > 10000000 | switzerland_total_population > 10000000) | wordt gebruikt voor binary nummers
+print(switzerland_total_population > 10000000 or spain_total_population > 10000000 
+and switzerland_total_population < 10000000 or spain_total_population < 10000000)
