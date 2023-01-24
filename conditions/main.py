@@ -3,7 +3,7 @@ __winc_id__ = '25596924dffe436da9034d43d0af6791'
 __human_name__ = 'conditions'
 
 # Add your code after this line
-
+# de actions hoefde niet eerst gedefineerd te worden, dit heb ik wel laten staan, maar doet verder niks
 """
 factors
 weather
