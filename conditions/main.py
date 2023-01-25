@@ -218,8 +218,7 @@ def farm_action (weather, time_of_day, cows_need_milking, location_cows, season,
         return "Mow grass"
     if (grass_status_long == True and season == "spring" and weather == "sunny" and location_cows == "pasture" and time_of_day != "night"):
         return "Take cows to cowshed\nMow grass\ntake cows back to pasture"
-    else:
-        return "wait"
+    return "wait"
 
 print (farm_action('rainy', 'night', False, 'cowshed', 'winter', True, True))
 print (farm_action('rainy', 'night', False, 'cowshed', 'winter', False, True))

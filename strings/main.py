@@ -29,11 +29,10 @@ goal_1 = 54 # minutes into the match
 
 scorers = first_goal + str(goal_0) + ", " + second_goal + str(goal_1)
 
-
 report = first_goal + "scored in the " + str(goal_0) + "nd minute"  + "\n" + second_goal + "scored in the " + str(goal_1) + "th minute"
 
 # new na feedback
-# report = f" {first_goal} scored in the {goal_0}nd minute \n {second_goal} scored in the {goal_1}th minute"
+# report = f"{first_goal} scored in the {goal_0}nd minute\n{second_goal} scored in the {goal_1}th minute"
 
 # print (report)
 
@@ -59,11 +58,12 @@ This variable needs to be a boolean, not a string. You can create the value for 
 Try this in your REPL for an example: print(2 != 3). Also try: print(2 != 2).
 """
 player = "Ronald Koeman"
-first_name = player [player.find ("Ronald"):6]
+first_name = player [:player.find (" ")]
 
-last_name_len = len (player [player.find ("Koeman"):])
+last_name_len = len (player [player.find (" ") +1 :])
 
-name_short = player[player.find ("Ronald")] + ". " + player [player.find ("Koeman"):]
+# oud, fout name_short = player[player.find ("Ronald")] + ". " + player [player.find ("Koeman"):]
+name_short = player[0] + ". " + (player [player.find (" ") +1 :])
 
 length_first_name= len(first_name)
 
@@ -71,6 +71,10 @@ chant = ((first_name + "!" + " ") * length_first_name ).strip()
 
 good_chant = chant [-1] != " "
 
-# print (first_name)
-# print (last_name_len)
-# print (chant)
+"""
+print (first_name)
+print (last_name_len)
+print (chant)
+print (name_short)
+print (good_chant)
+"""

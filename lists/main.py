@@ -39,37 +39,55 @@ print(alphabetical_order(["Saving Private Ryan", "The River","Checkmate", "Star 
 
 
 # golden globe and use lower-function
-""""
+"""
+golden_globe_winners = ["jaws", "star Wars: Episode IV - A New Hope", "E.T the Extra-Terrestrial", "Memoirs of a Geisha"]
 def won_golden_globe(movie_name):
-    if movie_name in ["Jaws", "Star Wars: Episode IV - A New Hope", "E.T the Extra-Terrestrial", "Memoirs of a Geisha"]:
-        print(True)
+    if movie_name in golden_globe_winners:
+        return True
+    elif movie_name.lower() in golden_globe_winners:
+        return True
     else:
-        print (False)
+        return False
+"""
 
-won_golden_globe("Jaws")
-won_golden_globe("Jeff")
- """
+golden_globes = ["Jaws", "Star Wars: Episode IV - A New Hope",
+                 "E.T. the Extra-Terrestrial", "Memoirs of a Geisha"]  # etc
+
+# This will change all upper case letters in lower case for golden_globes
+for movie in  range(len(golden_globes)):
+    golden_globes[movie] = golden_globes[movie].lower()
+# test print(golden_globes)
+
+def won_golden_globe(film_name):
+    if film_name.lower() in golden_globes:
+        return True
+    else:
+        return False
+
+print(won_golden_globe("Jaws"))
+print(won_golden_globe("memoirs of a geisha"))
+print(won_golden_globe("jeff"))
 
 # remove Joseph's toto albums
-"""
-def remove_toto_albums(album):
-    for x in album:
-        return (x)
 
-albums =["Africa", "World on a String", "Fahrenheit", "Jaws"]
+def remove_toto_albums(mess):
+    if "Fahrenheit" in mess:
+        mess.remove("Fahrenheit")
+    if "The Seventh One" in mess:
+        mess.remove("The Seventh One")
+    if "Toto XX" in mess:
+        mess.remove("Toto XX")
+    if "Falling in Between" in mess:
+        mess.remove("Falling in Between")
+    if "35th Anniversary - Live in Poland" in mess:
+        mess.remove("35th Anniversary - Live in Poland")
+    if "Toto XIV" in mess:
+        mess.remove("Toto XIV")
+    if "Old Is New" in mess:
+        mess.remove("Old Is New")
+    if "40 Tours Around The Sun - Live in Holland" in mess:
+        mess.remove("40 Tours Around The Sun - Live in Holland") 
+    return mess
+    
+print(remove_toto_albums(["Africa", "World on a String", "Fahrenheit", "Jaws", "The Seventh One"]))
 
-
-
-remove_toto_albums("Africa")
-#remove_toto_albums = []
-#films.remove(emove_toto_albums = [])
-
-def remove_toto_albums(album):
-    for x in album:
-        x.remove()
-
-albums =["Africa", "World on a String", "Fahrenheit", "Jaws"]
-
-remove_toto_albums("Africa")
-# stuurt lijst mee in functies met films en toto albums geen loop gebruiken met if statement naam toto album in operator naamlijst.remove(wat je verwijderd)
-"""
