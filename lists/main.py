@@ -4,6 +4,7 @@ __human_name__ = 'lists'
 
 # Add your code after this line
 """
+gehele opdracht
 Composer John Williams has written a great many pieces for a lot of different films. He's written so many, in fact, 
 that he has asked you to write a number of functions to help him keep it all organized.
 
@@ -26,20 +27,16 @@ Write a function remove_toto_albums that takes a list of strings, removes Joseph
     Search the web on how to remove an item from a list by value.
 
 """
-
-# alphabetical_order film list
+# 1) alphabetical_order film list
 
 def alphabetical_order (movies):
     return (sorted(movies))
 
-# movies = ["b", "a", "c"]
-# movies = ["Saving Private Ryan", "The River","Checkmate", "Star Wars - Main Title", "The Poseidon Adventure", "Cinderella Liberty", "Tom Sawyer", "Jaws", "Star Wars: Episode IV - A New Hope", "E.T the Extra-Terrestrial", "Memoirs of a Geisha"]
-
 print(alphabetical_order(["Saving Private Ryan", "The River","Checkmate", "Star Wars - Main Title", "The Poseidon Adventure", "Cinderella Liberty", "Tom Sawyer", "Jaws", "Star Wars: Episode IV - A New Hope", "E.T the Extra-Terrestrial", "Memoirs of a Geisha"]))
 
-
-# golden globe and use lower-function
+# 2) golden globe and use lower-function
 """
+fout
 golden_globe_winners = ["jaws", "star Wars: Episode IV - A New Hope", "E.T the Extra-Terrestrial", "Memoirs of a Geisha"]
 def won_golden_globe(movie_name):
     if movie_name in golden_globe_winners:
@@ -68,8 +65,7 @@ print(won_golden_globe("Jaws"))
 print(won_golden_globe("memoirs of a geisha"))
 print(won_golden_globe("jeff"))
 
-# remove Joseph's toto albums
-
+# 3) remove Joseph's toto albums
 def remove_toto_albums(mess):
     if "Fahrenheit" in mess:
         mess.remove("Fahrenheit")
