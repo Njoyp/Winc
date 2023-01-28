@@ -37,11 +37,25 @@ def most_vowels (countries):
    return sorted(countries, reverse= True, key = most_vowels_first)[:3]
 
 """
-3) alphabet_set: takes a list of country names and returns a list of country names whose letters can be combined to form the complete alphabet. How short can you get your list to be?
-Letter case is not relevant, so 'a' is the same letter as 'A' with regards to the alphabet.
+3) alphabet_set: takes a list of country names and returns a list of country names whose letters can be combined to
+form the complete alphabet. How short can you get your list to be? Letter case is not relevant, so 'a' is the 
+same letter as 'A' with regards to the alphabet.
 Solutions with 14 or fewer countries are accepted as correct.
-
 """
+def alphabet_set (countries):
+   countries = [country.lower() for country in countries]
+   letters_needed = list("abcdefghijklmnopqrstuvwxyz")
+   countries_alphabet =[]
+   for country in countries:
+      for char in country:
+         if char in letters_needed:
+            letters_needed.remove(char)
+            if country not in countries_alphabet:
+               countries_alphabet.append(country)
+      if len(letters_needed) == 0:
+         return countries_alphabet
+
+
 
 # This block is only run if this file is the entrypoint; python main.py
 # It is not run if it is imported as a module: `from main import *`
@@ -49,5 +63,6 @@ if __name__ == "__main__":
    countries = get_countries()
    print (shortest_names (countries))
    print(most_vowels(countries))
+   print(alphabet_set(countries))
 
 """ Write the calls to your functions here. """
