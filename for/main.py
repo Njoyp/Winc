@@ -37,6 +37,32 @@ def most_vowels (countries):
    return sorted(countries, reverse= True, key = most_vowels_first)[:3]
 
 """
+Solution Winc
+def most_vowels(countries):
+    vowels = "aeiou"
+
+    # List of tuples of (country_name, vowel_count)
+    # Can also be lists if unfamiliar with tuples
+    leaderboard = [("", 0)]
+
+    for country_name in countries:
+        # Count vowels
+        vowel_count = 0
+        for char in country_name:
+            if char.lower() in vowels:
+                vowel_count += 1
+
+        # Insert into leaderboard if deserving.
+        for position in range(len(leaderboard)):
+            if vowel_count >= leaderboard[position][1]:
+                leaderboard.insert(position, (country_name, vowel_count))
+                break
+            if position > 2:
+                break
+
+    return [x[0] for x in leaderboard[:3]]
+"""
+"""
 3) alphabet_set: takes a list of country names and returns a list of country names whose letters can be combined to
 form the complete alphabet. How short can you get your list to be? Letter case is not relevant, so 'a' is the 
 same letter as 'A' with regards to the alphabet.
