@@ -41,11 +41,7 @@ def koala_weight (): # return hoeveel koala in kg weegt als integer
     weight = second_split [-1]
     return int(weight)
     """
-    return int(fact.split("kg")[0].split(" ")[-1])
-
-
-
-
+    return int(fact.split("kg")[0].split(" ")[-1]) # dit zijn de stappen die hier direct bovenstaan
 
 # This block is only executed if this script is run directly (python main.py)
 # It is not run if you import this file as a module.
