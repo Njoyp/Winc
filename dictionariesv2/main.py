@@ -7,21 +7,42 @@ __human_name__ = "dictionariesv2"
 # Add your code after this line
 # Part one Create Passport
 
-def create_passport(name: str, date_of_birth: str, place_of_birth: str, heigt_in_meters: float, nationality: str ): 
-    date_of_birth = date.birth()
-    date_of_birth_str = date_of_birth.isoformat() 
-    passport = {
-        name : (),
-        date_of_birth_str : (),
-        place_of_birth : (),
-        heigt_in_meters : (),
-        nationality : ()
-    }
+# date_of_birth = date.birth()
+# date_of_birth_str = date_of_birth.isoformat()
 
+# countries = get_countries oproepen door countries []
 
-    # date of birth uses ISO 8601 format .isoformat()?
-    # nationality is country from get_countries
-    # return passport dict containing all the information with keys 
+def create_passport(name, date_of_birth, place_of_birth, height, nationality):
+    passport_info = {
+        "name": name,
+        "date_of_birth": date_of_birth,
+        "place_of_birth": place_of_birth,
+        "height": float(height),
+        "nationality": nationality 
+        }
+    return passport_info
+
+print(create_passport("Nikita", "01-07-1993", "Amsterdam", 1.69, "The Netherlands"))
+
+passport_Bea = create_passport("Bea", "09-08-1994", "Amsterdam", 1.59, "The Netherlands")
+print(passport_Bea)
+
+def add_stamp(passport, country):
+  if country == passport["nationality"]:
+    return passport
+    
+  if "stamps" not in passport:
+    passport["stamps"] = []
+
+  if country not in passport["stamps"]:
+    passport["stamps"].append(country)
+
+  return passport
+
+print(add_stamp(passport_Bea, "Belgium"))
+
+def add_biometric_data (passport):
+  passport["biometric"]  
 
 """
 Explantion
@@ -51,7 +72,8 @@ nationality
 We express a nationality as a country (str) from the list returned by get_countries.
 
 Part 2: Add Stamp
-Whenever a person travels to another country, they get a stamp in their passport that shows that they have been there. Implement add_stamp in main.py, which takes as its arguments, in this order:
+Whenever a person travels to another country, they get a stamp in their passport that shows that they have been there. 
+Implement add_stamp in main.py, which takes as its arguments, in this order:
 A passport (dict) like the one returned by create_passport
 A country (str)
 
